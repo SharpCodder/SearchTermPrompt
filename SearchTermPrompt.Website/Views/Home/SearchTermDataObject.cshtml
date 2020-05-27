@@ -1,0 +1,38 @@
+﻿@model IEnumerable<SearchTermPrompt.Models.SearchTermModel>
+
+@{
+    ViewData["Title"] = "SearchTermDataObject";
+}
+
+<h1>Search Term Data</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Term)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LowercaseTerm)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumberOfSearches)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Term)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LowercaseTerm)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumberOfSearches)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
